@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico desde R a través de JavaScript</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/shiny@1.7.1/shiny.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+
+    <script>
+        $(document).ready(function() {
+            // Iniciar la aplicación Shiny
+            Shiny.onInputChange("data", [10, 20, 30, 40, 50]);
+        });
+    </script>
+
+    <!-- Insertar la aplicación Shiny -->
+    <iframe src="app.R" style="display:none;"></iframe>
+</body>
+</html>
