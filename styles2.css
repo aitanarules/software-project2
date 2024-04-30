@@ -1,0 +1,209 @@
+/* https://fonts.google.com/ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mina:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root {
+
+    --color1: #FFFFFF;
+    --color2: #EE7623;
+    --color3: #EEEEEE;
+    --color4: #DCE3EB;
+    --color5: #C1C5C8;
+
+    --colorazul1: #7398AD;
+    --colorazul2: #003B4D;
+    --colornaranja1: #FF9D6C;
+    --colornaranja2: #EE7623;
+    --colornaranja3: #C1531B;
+    --colorgris1: #DCE3EB;
+    --colorgris2: #C1C5C8;
+    --colornegro: #000000;
+
+    --fontColor1: #000000;
+    --fontColor2:  #707070;
+}
+
+*{
+    font-family: "Mina";
+    /* font-weight: 400; */
+    color: var(--fontColor1)
+}
+
+/* Upper-size */
+#upper-side{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 1em;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+
+#title{
+    width:100%;
+    font-size: 270%;
+    color: var(--color2);
+}
+
+
+#hl-logo-img{
+    width: 5em;
+    
+}
+
+#hamburguer{
+    /* transform: rotate(90deg); */
+    
+    border: none;
+    background-color: var(--color1);
+    color: var(--fontColor1);
+    font-weight: 800;
+    font-size: larger;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#hamburguer:hover{
+    background-color: var(--fontColor1);
+    color:var(--color1)
+}
+
+/* middle-side */
+#middle-side{
+    display: flex;
+    margin: 10px;
+    justify-content: center; 
+    text-align: center;  
+    align-items: center;
+
+}
+
+/* left-side */
+#middle-left-side{
+    width: 25%;
+    max-height: 500px;
+    min-height: 200px;
+    display: flex;
+    flex-flow: column;
+}
+
+
+/* right-side */
+
+#middle-right-side{
+    max-height: 500px;
+    width: 50%;
+    border-radius: 10px;
+
+}
+
+/* lower-side */
+#lower-side{
+    display: flex;
+    margin-left: 30px;
+    justify-content: center; 
+    text-align: center;  
+    align-items: center;
+    margin-right: 300px;
+
+}
+
+#lower-left-side{
+
+    width: 40%;
+    max-height: 500px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+
+    flex-flow: column;
+}
+
+#button-div{
+    position:absolute;
+    margin-left: 60em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.button-class{
+    margin: 5px;
+    background-color: var(--color2);
+    border: none;
+    color: var(--color1);
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 7px;
+    width: 110%;
+    height: 33%;
+
+}
+
+.button-class:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px var(--fontColor1);
+
+
+}
+/* .current{
+    background-color: var(--color3);
+    border-radius: 20px;
+    margin: 5px; 
+    text-align: center; 
+    flex-flow: row;
+    display: flex;
+} */
+
+
+/* Estilos para los títulos */
+.chart h3 {
+    margin: 10px; /* Añadir margen superior e inferior y alinear a la izquierda */
+}
+
+/* Estilos para las unidades */
+.chart h5 {
+    margin: 0 0 10% 0; /* Añadir margen inferior y alinear a la derecha */
+    align-self: flex-end;
+}
+
+/* Estilos para los párrafos */
+.chart p {
+    margin: 5px 0; /* Añadir margen superior e inferior al párrafo */
+}
+
+/* table, th, td {
+border: 1px solid var(--color3);
+border-radius: 10px;
+border-style: outset;
+} */
+
+table{
+    border-spacing: 7px;
+}
+
+
+th, td {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+td{
+    background-color: var(--color3);
+    border-radius: 15px;
+}
+
+/* td:nth-child(even), th:nth-child(even) {
+    background-color: var(--color3);
+  } */
+
+td:hover{background-color: var(--colorazul2);
+color: var(--color1);} 
