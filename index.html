@@ -3,46 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>Hyperloop</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <div id="desktop">
-        <div id="upper-side">
-            <div id="hl-logo">
-                <img id="hl-logo-img" src="hyperloop-logo.JPG" alt="hyperloop-logo">
-            </div>
-            <h1 id="title">HYPER VISOR</h1>
-            <div id="button-space">
-                <button id="hamburguer">☰</button>
-            </div>
+        <div  id="upper-side">
+          <div id="hl-logo">
+              <a href="index.html"><img id="hl-logo-img" src="/images/hyperloop-logo.JPG" alt="hyperloop-logo"></a>
+          </div>
+          <h1 id="title">HYPER VISOR</h1>
+          <div id="button-space">
+              <span id="hamburguer" onclick="openNav()">☰ <i class="fa fa-bars"></i> </span>
+          </div>
 
+      </div>
+   
+      <div class="topnav" id="myLinks">
+        <a href="https://hyperloopupv.com/" target="_blank">Hyperloop UPV</a>
+        <a href="/html/something.html">Something else</a>
+        <a href="/html/about.html">About</a>
+      </div> 
+
+        <div id="middle-side">
+
+          <div id="hour-div">
+            <h3 class="time">Time clock</h3>
+            <p id="time">00:00:00</p>
+            <h3 class="time">Timer</h3>
+            <p id="timer">00:00:00</p>
+          </div>
+
+          <div id="tooltipMessage" class="tooltip"></div>
+            <table class="data_table" >
+              <tr>
+                <th></th>
+                <th data-tooltip="m/s">Speed</th>
+                <th >Airgap</th>
+                <th >Current</th>
+                <th >Voltage</th>
+              </tr>
+              <tr>
+                <th>present</th>
+                <td class="current" id="speed">0</td>
+                <td class="current" id="airgap">0</td>
+                <td class="current" id="current">0</td>
+                <td class="current" id="voltage">0</td>
+              </tr>
+              <tr>
+                <th>min</th>
+                <td id="min-s">0</td>
+                <td id="min-a">0</td>
+                <td id="min-c">0</td>
+                <td id="min-v">0</td>
+              </tr>
+              <tr>
+                <th>mean</th>
+                <td id="mean-s">0</td>
+                <td id="mean-a">0</td>
+                <td id="mean-c">0</td>
+                <td id="mean-v">0</td>
+              </tr>
+              <tr>
+                <th>max</th>
+                <td id="max-s">0</td>
+                <td id="max-a">0</td>
+                <td id="max-c">0</td>
+                <td id="max-v">0</td>
+              </tr>
+              <tr>
+                <th>sdv</th>
+                <td id="sdv-s">0</td>
+                <td id="sdv-a">0</td>
+                <td id="sdv-c">0</td>
+                <td id="sdv-v">0</td>
+              </tr>
+
+            </table>
+
+            <div id="button-div">
+              <button class="button-class" id="button-save-json">JSON Save</button>
+              <button class="button-class" id="button-save-csv">CSV Save</button>
+              <button class="button-class" id="button-info">Help</button>
+            </div>
         </div>
 
         <div id="lower-side">
-            <div id="left-side">
-                <canvas class="chart" id="F1" width="200" height="100"></canvas> 
-                <canvas class="chart" id="F2" width="200" height="100"></canvas> 
-                <canvas class="chart" id="F3" width="200" height="100"></canvas> 
-                <canvas class="chart" id="F4" width="200" height="100"></canvas> 
+          <div class="canvas-container">
+            <!-- <h3>Speed</h3> -->
+            <div class="canvas" id="canvas1"></div>
 
-            </div>
-            <div id="right-side">
-                <canvas class="chart" id="F5" width="350" height="200"></canvas> 
-                <div id="right-right-side">
-                    <canvas class="chart" id="F6" width="400" height="430"></canvas> 
-                    <div id="button-div">
-                        <button class="button-class" id="button-save">Save</button>
-                        <button class="button-class" id="button-capture">Capture</button>
-                        <button class="button-class" id="button-info">Help</button>
-
-                </div>
-
-            </div>
+          </div>
+          <div class="canvas-container">
+            <!-- <h3>Airgap</h3> -->
+            <div class="canvas" id="canvas2"></div>
+          </div>
+          <div class="canvas-container">
+            <!-- <h3>Current</h3> -->
+            <div class="canvas" id="canvas3"></div>
+          </div>
+          <div class="canvas-container">
+            <!-- <h3>Voltage</h3> -->
+            <div class="canvas" id="canvas4"></div>
+          </div>
         </div>
 
-    </div>
 
-    <iframe src="http://127.0.0.1:port" width="800" height="600"></iframe>
+    </div>
+    <div id="tester" style="width:600px;height:250px;"></div>
+
+    <!-- <script src="/js/tcp_plots.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="js/plotly.min.js"></script>
+    <script src="/js/tcp_values.js"></script>
+
+
     
+
 </body>
 </html>
