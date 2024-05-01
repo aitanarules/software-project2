@@ -15,34 +15,79 @@
             <div id="button-space">
                 <button id="hamburguer">☰</button>
             </div>
+        </div>
 
+        <div id="middle-side">
+
+          <div id="hour-div">
+            <h3 id="hour">Time clock</h3>
+            <p id="time">00:00:00</p>
+          </div>
+
+            <table class="data_table" >
+              <tr>
+                <th></th>
+                <th >Speed</th>
+                <th >Airgap</th>
+                <th >Current</th>
+                <th >Voltage</th>
+              </tr>
+              <tr>
+                <th>current</th>
+                <td class="current" id="speed">0</td>
+                <td class="current" id="airgap">0</td>
+                <td class="current" id="current">0</td>
+                <td class="current" id="voltage">0</td>
+              </tr>
+              <tr>
+                <th>min</th>
+                <td id="min-s">0</td>
+                <td id="min-a">0</td>
+                <td id="min-c">0</td>
+                <td id="min-v">0</td>
+              </tr>
+              <tr>
+                <th>mean</th>
+                <td id="mean-s">0</td>
+                <td id="mean-a">0</td>
+                <td id="mean-c">0</td>
+                <td id="mean-v">0</td>
+              </tr>
+              <tr>
+                <th>max</th>
+                <td id="max-s">0</td>
+                <td id="max-a">0</td>
+                <td id="max-c">0</td>
+                <td id="max-v">0</td>
+              </tr>
+              <tr>
+                <th>sdv</th>
+                <td id="sdv-s">0</td>
+                <td id="sdv-a">0</td>
+                <td id="sdv-c">0</td>
+                <td id="sdv-v">0</td>
+              </tr>
+
+            </table>
+
+            <div id="button-div">
+              <button class="button-class" id="button-save">Save</button>
+              <button class="button-class" id="button-capture">Capture</button>
+              <button class="button-class" id="button-info">Help</button>
+            </div>
         </div>
 
         <div id="lower-side">
-            <div id="left-side">
-                <canvas class="chart" id="F1" width="200" height="100"></canvas> 
-                <canvas class="chart" id="F2" width="200" height="100"></canvas> 
-                <canvas class="chart" id="F3" width="200" height="100"></canvas> 
-                <canvas class="chart" id="F4" width="200" height="100"></canvas> 
+          <canvas class="chart" id="line-chart"></canvas> 
 
-            </div>
-            <div id="right-side">
-                <canvas class="chart" id="F5" width="350" height="200"></canvas> 
-                <div id="right-right-side">
-                    <canvas class="chart" id="F6" width="400" height="430"></canvas> 
-                    <div id="button-div">
-                        <button class="button-class" id="button-save">Save</button>
-                        <button class="button-class" id="button-capture">Capture</button>
-                        <button class="button-class" id="button-info">Help</button>
-
-                </div>
-
-            </div>
         </div>
+
 
     </div>
 
-    <iframe src="http://127.0.0.1:port" width="800" height="600"></iframe>
-    
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <script src="/tcp_plots.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 </html>
