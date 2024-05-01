@@ -20,20 +20,23 @@
         <div id="middle-side">
 
           <div id="hour-div">
-            <h3 id="hour">Time clock</h3>
+            <h3 class="time">Time clock</h3>
             <p id="time">00:00:00</p>
+            <h3 class="time">Timer</h3>
+            <p id="timer">00:00:00</p>
           </div>
 
+          <div id="tooltipMessage" class="tooltip"></div>
             <table class="data_table" >
               <tr>
                 <th></th>
-                <th >Speed</th>
+                <th data-tooltip="m/s">Speed</th>
                 <th >Airgap</th>
                 <th >Current</th>
                 <th >Voltage</th>
               </tr>
               <tr>
-                <th>current</th>
+                <th>present</th>
                 <td class="current" id="speed">0</td>
                 <td class="current" id="airgap">0</td>
                 <td class="current" id="current">0</td>
@@ -71,15 +74,30 @@
             </table>
 
             <div id="button-div">
-              <button class="button-class" id="button-save">Save</button>
-              <button class="button-class" id="button-capture">Capture</button>
+              <button class="button-class" id="button-save-json">JSON Save</button>
+              <button class="button-class" id="button-save-csv">CSV Save</button>
               <button class="button-class" id="button-info">Help</button>
             </div>
         </div>
 
         <div id="lower-side">
-          <canvas class="chart" id="line-chart"></canvas> 
-
+          <!-- <canvas class="chart" id="line-chart"></canvas>  -->
+          <div class="canvas-container">
+            <h3>Speed</h3>
+            <canvas id="canvas1"></canvas>
+          </div>
+          <div class="canvas-container">
+            <h3>Airgap</h3>
+            <canvas id="canvas2"></canvas>
+          </div>
+          <div class="canvas-container">
+            <h3>Current</h3>
+            <canvas id="canvas3"></canvas>
+          </div>
+          <div class="canvas-container">
+            <h3>Voltage</h3>
+            <canvas id="canvas4"></canvas>
+          </div>
         </div>
 
 
@@ -88,6 +106,7 @@
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
     <script src="/tcp_plots.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 </body>
 </html>
