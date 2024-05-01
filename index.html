@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Hyperloop</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <div id="desktop">
-        <div id="upper-side">
-            <div id="hl-logo">
-                <img id="hl-logo-img" src="hyperloop-logo.JPG" alt="hyperloop-logo">
-            </div>
-            <h1 id="title">HYPER VISOR</h1>
-            <div id="button-space">
-                <button id="hamburguer">☰</button>
-            </div>
-        </div>
+        <div  id="upper-side">
+          <div id="hl-logo">
+              <a href="index.html"><img id="hl-logo-img" src="/images/hyperloop-logo.JPG" alt="hyperloop-logo"></a>
+          </div>
+          <h1 id="title">HYPER VISOR</h1>
+          <div id="button-space">
+              <span id="hamburguer" onclick="openNav()">☰ <i class="fa fa-bars"></i> </span>
+          </div>
+
+      </div>
+   
+      <div class="topnav" id="myLinks">
+        <a href="https://hyperloopupv.com/" target="_blank">Hyperloop UPV</a>
+        <a href="#">Something else</a>
+        <a href="#">About</a>
+    </div> 
 
         <div id="middle-side">
 
@@ -104,7 +111,7 @@
     </div>
 
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
-    <script src="/tcp_plots.js"></script>
+    <script src="/js/tcp_plots.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>

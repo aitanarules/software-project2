@@ -66,6 +66,7 @@
     font-size: larger;
     border-radius: 5px;
     cursor: pointer;
+    padding: 2px;
 
 }
 
@@ -73,6 +74,41 @@
     background-color: var(--fontColor1);
     color:var(--color1)
 }
+
+.topnav {
+    background-color: var(--colorazul2);
+    overflow: hidden;
+    display: none;
+    text-align: center;
+    padding: 1em;
+}
+
+.topnav #myLinks {
+    display: none;
+    position: absolute;
+
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.topnav a {
+    /* float: left; */
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover{
+    background-color: var(--color1);
+    border-radius: 20px;
+    color: var(--colorazul2);
+}
+
+
 
 /* middle-side */
 
@@ -225,11 +261,11 @@ td:not(.exception):hover{background-color: var(--colorazul2);
     width: 100%;
     height: 260px;
     border: 1px solid --color1;
-    box-sizing: border-box; /* Incluir el borde en el tamaño total del elemento */
+    box-sizing: border-box; 
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    flex-direction: column; /* Alinear el título y el canvas verticalmente */
+    flex-direction: column; 
     /* overflow: hidden;  */
     margin-top:25px;
     margin-bottom: 25px;
