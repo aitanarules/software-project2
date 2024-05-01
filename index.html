@@ -88,32 +88,38 @@
         </div>
 
         <div id="lower-side">
-          <!-- <canvas class="chart" id="line-chart"></canvas>  -->
           <div class="canvas-container">
-            <h3>Speed</h3>
-            <canvas id="canvas1"></canvas>
+            <!-- <h3>Speed</h3> -->
+            <div class="canvas" id="canvas1"></div>
+
           </div>
           <div class="canvas-container">
-            <h3>Airgap</h3>
-            <canvas id="canvas2"></canvas>
+            <!-- <h3>Airgap</h3> -->
+            <div class="canvas" id="canvas2"></div>
           </div>
           <div class="canvas-container">
-            <h3>Current</h3>
-            <canvas id="canvas3"></canvas>
+            <!-- <h3>Current</h3> -->
+            <div class="canvas" id="canvas3"></div>
           </div>
           <div class="canvas-container">
-            <h3>Voltage</h3>
-            <canvas id="canvas4"></canvas>
+            <!-- <h3>Voltage</h3> -->
+            <div class="canvas" id="canvas4"></div>
           </div>
         </div>
 
 
     </div>
+    <div id="tester" style="width:600px;height:250px;"></div>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
-    <script src="/js/tcp_plots.js"></script>
+    <!-- <script src="/js/tcp_plots.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="js/plotly.min.js"></script>
+    <script src="/js/tcp_values.js"></script>
+
+
+    
+
 </body>
 </html>
