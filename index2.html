@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hyperloop</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div id="desktop">
+        <div id="upper-side">
+            <div id="hl-logo">
+                <img id="hl-logo-img" src="hyperloop-logo.JPG" alt="hyperloop-logo">
+            </div>
+            <h1 id="title">HYPER VISOR</h1>
+            <div id="button-space">
+                <button id="hamburguer">☰</button>
+            </div>
+        </div>
+
+        <div id="middle-side">
+
+            <div id="middle-left-side"> 
+                  <div class="chart" id="F1" width="20" height="10">
+                    <h3>Speed</h3>
+
+                    <p id="speed"> 0 </p>
+                    <h5>m/s</h5>
+
+                  </div> 
+                  <div class="chart" id="F2" width="200" height="100">
+                    <h3>Airgap</h3>
+
+                    <p id="airgap"> 0</p>
+                    <h5>m/s</h5>
+
+                  </div> 
+                  <div class="chart" id="F3" width="200" height="100">
+                    <h3>Current</h3>
+
+                    <p id="current">0 </p>
+                    <h5>m/s</h5>
+
+                  </div> 
+                  <div class="chart" id="F4" width="200" height="100">
+                    <h3>Voltage</h3>
+                    <p id="voltage">0 </p>
+                    <h5>m/s</h5>
+
+                  </div> 
+            </div>
+
+            <div id="middle-right-side">
+              <!-- <h3>Statistical summary</h3> -->
+              <canvas class="chart" id="F5" width="450" height="260"></canvas> 
+
+            </div>
+
+
+        </div>
+
+        <div id="lower-side">
+          <div id="lower-left-side">
+              <canvas class="chart" id="F6" width="700" height="300"></canvas> 
+          </div>
+          <div id="button-div">
+            <button class="button-class" id="button-save">Save</button>
+            <button class="button-class" id="button-capture">Capture</button>
+            <button class="button-class" id="button-info">Help</button>
+          </div>
+        </div>
+
+
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <script src="/tcp_plots.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
