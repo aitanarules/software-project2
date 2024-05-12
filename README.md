@@ -1,7 +1,6 @@
 # Software project
 
-This is the Hyperloop UPV Training Center project from the Software subsystem. Here you'll find a real-time visualization for the POD data simulator. Find more details at GitHub
-
+This is the Hyperloop UPV Training Center project from the Software subsystem. Here you'll find a real-time visualization for the POD data simulator.
 
 
 ## How should I use this?
