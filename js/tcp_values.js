@@ -11,9 +11,12 @@ var voltage_dic = {'min': 1000, 'max': -1, 'mean': 0, 'sdv': 0, 'sum': 0};
 
 var instancesArray = []; // Variable to store all instances
 const startTime = new Date();
+var second = 0;
 
 var times = [];
 var timestamps = [];
+var seconds = [];
+
 var speeds = [];
 var airgaps = [];
 var currents = [];
@@ -74,10 +77,14 @@ ws.addEventListener('message', function (event) {
     updateHour(currentTime);   
     updateDisplay(currentDate, startTime);
 
+    const elapsedTime = currentDate.getTime() - startTime.getTime();
+    let second = Math.floor(elapsedTime / 1000);
+
+    updateValues(data["name"], data["value"], data["timestamp"], currentTime, second); // Update charts with received data
+
     
-    updateValues(data["name"], data["value"], data["timestamp"], currentTime); // Update charts with received data
     instancesArray.push({                       // Add data to instances array
-        timestamp: data["timestamp"],
+        timestamp: data["timestamp"], // Date(data['timestamp']*1000),
         variable: data["name"],
         value: data["value"]
 
@@ -134,11 +141,12 @@ function updateColor(name='speed', value) {
 }
 
 // Function to update values
-function updateValues(name, value, timestamp, hour) {   
+function updateValues(name, value, timestamp, hour, second) {   
 
     if (name == "speed") {
         timestamps.push(timestamp)   // We put it here to just get just one
         times.push(hour)
+        seconds.push(second)
         n_instances++;
 
         speeds.push(value)
@@ -246,7 +254,8 @@ document.getElementById('button-info').addEventListener('click', function() {
             
         </ul>
         <p> Additionally, you can find a save button to store the values displayed so far in .csv and json format.</p>
-    `;
+        <p>Below, you'll see 4 charts that represent the last 60 values of each of the variables: the x-axis refers to seconds (since the execution time), while the y-axis refers to each of the ranges of the variable.</p>`
+        ;
 
     //Add window to body
     document.body.appendChild(modal);
@@ -254,7 +263,7 @@ document.getElementById('button-info').addEventListener('click', function() {
     // Darken the background
     document.body.classList.add('modal-open');
 
-    // Event listener to close the windowe
+    // Event listener to close the window
     modal.querySelector('.close-button').addEventListener('click', function() {
         // Remove window
         modal.parentNode.removeChild(modal);
@@ -262,6 +271,15 @@ document.getElementById('button-info').addEventListener('click', function() {
         document.body.classList.remove('modal-open');
     });
 });
+
+// Other help-info event
+function openHelp() {
+    document.getElementById("help-info").style.display = "block";
+}
+
+function closeHelp() {
+    document.getElementById("help-info").style.display = "none";
+}
 
 
 
@@ -280,9 +298,14 @@ function openNav() {
 
 
 function chart(element, variable, values){
+    let seconds_plot = seconds;
+    if (values.length>60){
+        seconds_plot = seconds_plot.slice(-60);
+        values = values.slice(-60);
+    }
    
     // Display using Plotly
-    const data = [{x:times, y:values, mode:"lines", line: {color: '#80CAF6'}}];
+    const data = [{x:seconds_plot, y:values, mode:"lines", line: {color: '#80CAF6'}}];
     const layout = {title: variable};
     Plotly.newPlot(element, data, layout);
 }
@@ -293,4 +316,6 @@ function p(){
     Plotly.newPlot(canvas1, data, layout);
 }
 
+
+// Event to upload data
 

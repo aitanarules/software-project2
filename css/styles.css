@@ -213,6 +213,7 @@ td:not(.exception):hover{background-color: var(--colorazul2);
 } */
 
 .modal {
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -273,6 +274,7 @@ td:not(.exception):hover{background-color: var(--colorazul2);
 
 .canvas-container h3{
     text-align: center;
+    
 }
 
 .canvas {
@@ -280,4 +282,8 @@ td:not(.exception):hover{background-color: var(--colorazul2);
     max-height: 100%;
     width: auto;
     height: auto;
+}
+
+#canvas1234{
+    background-color: #000000;
 }

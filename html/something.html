@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Hyperloop</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <div id="desktop">
@@ -14,7 +15,7 @@
           <div id="hl-logo">
               <a href="../index.html"><img id="hl-logo-img" src="/images/hyperloop-logo.JPG" alt="hyperloop-logo"></a>
           </div>
-          <h1 id="title">Something else</h1>
+          <h1 id="title">Past metrics</h1>
           <div id="button-space">
               <span id="hamburguer" onclick="openNav()">☰ <i class="fa fa-bars"></i> </span>
           </div>
@@ -23,21 +24,48 @@
    
       <div class="topnav" id="myLinks">
         <a href="https://hyperloopupv.com/" target="_blank">Hyperloop UPV</a>
-        <a href="/html/something.html">Something else</a>
+        <a href="/html/something.html">Past metrics</a>
         <a href="/html/about.html">About</a>
     </div> 
 
-        <div id="other-middle-side" style="margin: 30px;">
-          <h1>What is this?</h1>
-          <p>I don't know</p>
+    <div id="middle-side">
+
+        <div id="help-info" class="modal" style="display: none;">
+            <div class="modal-header">
+                <h2>Helpful information</h2>
+                <span onclick="closeHelp()" class="close-button">&times;</span>
+            </div>
+
+            <p>In this page you will be able to visualize the historical data. Just click on the "Upload" button and choose the JSON file you previously saved.</p>
+
+        </div>
+        
+
+        <div class="canvas-container">
+            <div class="canvas" id="plot"></div>
         </div>
 
-         
+          <div id="button-div">
+            <!-- <button onclick="showFileContent()" class="button-class" id="button-upload-json">Upload</button> -->
+            <input type="file" id="fileInput" style="display: none;" onchange="showFileContent()">
+            <label for="fileInput" class="button-class" id="button-upload-json" style="text-align: center;">Upload</label>
+            
+            <button class="button-class" id="button-info2" onclick="openHelp()">Help</button>
+            <hr>
+            <pre id="fileContent"></pre>
+        
+            </div>
 
 
-    </div>
+
+
+      </div>
+
+
+
 
     <script src="/js/tcp_values.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="js/plotly.min.js"></script>
+    <script src="/js/tcp_plots.js"></script>
 </body>
 </html>

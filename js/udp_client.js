@@ -1,4 +1,3 @@
-// https://www.youtube.com/watch?v=yaJjhnV7f-0&t=362s
 
 // Import required modules
 const fs = require('fs');       // File System Module
