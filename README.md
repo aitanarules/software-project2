@@ -8,8 +8,6 @@ This is the Hyperloop UPV Training Center project from the Software subsystem. H
 First, you need to download the files of this repository:
 > git clone https://github.com/aitanarules/software-project2.git
 
-> cd hand-recognition
-
 Secondly, you will need to run the simulator server and the UDP client in order to send and receive the data. You should do it in different terminals.
 > node /js/udp_simulator.js
 
