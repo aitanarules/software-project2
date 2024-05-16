@@ -36,9 +36,12 @@
                 <span onclick="closeHelp()" class="close-button">&times;</span>
             </div>
 
-            <p>In this page you will be able to visualize the historical data. Just click on the "Upload" button and choose the JSON file you previously saved.</p>
-
-        </div>
+            <p>On this page, you will be able to visualize the historical data. Just click on the "Upload" button and choose the JSON file you previously saved.</p>
+            <p>Additionally, if you want to visualize the historical data on the same scale to ease comparison, click on the "Upload Scaled" button. The scaling method used was min-max scaling, and the resulting values will vary between [0, 1].</p>
+            <p style="text-align: center;">x' = (x - x<sub>min</sub>) / (x<sub>max</sub> - x<sub>min</sub>)</p>
+            <p>Where the min and max values refer to the theoretical ones of each variable. This way, we can observe atypical values (those which are greater than 1 or less than 0).</p>
+            </div>
+            
         
 
         <div class="canvas-container">
@@ -49,7 +52,10 @@
             <!-- <button onclick="showFileContent()" class="button-class" id="button-upload-json">Upload</button> -->
             <input type="file" id="fileInput" style="display: none;" onchange="showFileContent()">
             <label for="fileInput" class="button-class" id="button-upload-json" style="text-align: center;">Upload</label>
-            
+
+            <input type="file" id="fileInput" style="display: none;" onchange="showFileContentScaled()">
+            <label for="fileInput" class="button-class" id="button-upload-json" style="text-align: center;">Upload scaled</label>
+
             <button class="button-class" id="button-info2" onclick="openHelp()">Help</button>
             <hr>
             <pre id="fileContent"></pre>
@@ -64,8 +70,10 @@
 
 
 
-    <script src="/js/tcp_values.js"></script>
-    <script src="js/plotly.min.js"></script>
+    <!-- <script src="/js/tcp_values.js"></script> -->
+    <script src="/js/plotly.min.js"></script>
     <script src="/js/tcp_plots.js"></script>
+
+    
 </body>
 </html>

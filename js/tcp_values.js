@@ -61,6 +61,9 @@ canvas2 = document.getElementById('canvas2');
 canvas3 = document.getElementById('canvas3');
 canvas4 = document.getElementById('canvas4');
 
+dom_time = document.getElementById('time');
+dom_timer = document.getElementById('timer');
+
 
 // WebSocket event listener
 ws.addEventListener('open', function (event) {
@@ -99,7 +102,7 @@ ws.addEventListener('message', function (event) {
 
 // Function to update hour display
 function updateHour(hour){
-    time = document.getElementById('time').innerText = hour;
+    dom_time.innerText = hour;
     // times.push(hour);
 }
 
@@ -119,7 +122,7 @@ function updateDisplay(currentDate, startTime) {
     seconds = padNumber(seconds, 2);
 
     const timerText = `${hours}:${minutes}:${seconds}`;
-    document.getElementById('timer').innerText = timerText;
+    dom_timer.innerText = timerText;
 }
 
 
@@ -211,6 +214,8 @@ function saveInstancesToJson() {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
+    
+
 }
 
 // Function to save instances to CSV file
@@ -253,7 +258,7 @@ document.getElementById('button-info').addEventListener('click', function() {
             <li>Voltage V</li>
             
         </ul>
-        <p> Additionally, you can find a save button to store the values displayed so far in .csv and json format.</p>
+        <p>Additionally, you can find a save button to store the values displayed so far in .csv and json format.</p>
         <p>Below, you'll see 4 charts that represent the last 60 values of each of the variables: the x-axis refers to seconds (since the execution time), while the y-axis refers to each of the ranges of the variable.</p>`
         ;
 
@@ -272,27 +277,7 @@ document.getElementById('button-info').addEventListener('click', function() {
     });
 });
 
-// Other help-info event
-function openHelp() {
-    document.getElementById("help-info").style.display = "block";
-}
 
-function closeHelp() {
-    document.getElementById("help-info").style.display = "none";
-}
-
-
-
-// Menu
-
-function openNav() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
 
 //Function to update charts
 
@@ -310,12 +295,15 @@ function chart(element, variable, values){
     Plotly.newPlot(element, data, layout);
 }
 
-function p(){
-    const data = [{x:timestamps, y:speeds, mode:"lines"}];
-    const layout = {title: 'Speed'};
-    Plotly.newPlot(canvas1, data, layout);
-}
 
 
-// Event to upload data
+// Menu
 
+function openNav() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
